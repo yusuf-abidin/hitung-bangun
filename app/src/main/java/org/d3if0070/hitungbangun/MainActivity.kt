@@ -45,6 +45,9 @@ class MainActivity : AppCompatActivity() {
     private fun reset(){
         binding.editTextlebar.setText("")
         binding.editTextpanjang.setText("")
+        binding.hasilLuas.setText("50")
+        binding.hasilKeliling.setText("30 cm")
+
     }
 
 

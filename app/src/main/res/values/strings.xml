@@ -8,9 +8,10 @@
     <string name="judulPP">Persegi Panjang</string>
     <string name="keliling">Keliling :</string>
     <string name="luas">Luas :</string>
-    <string name="cmkuadrat">50 cm<sup><small>2</small></sup></string>
+    <string name="limapuluh">50</string>
+    <string name="cmkuadrat"> cm<sup><small>2</small></sup></string>
     <string name="hasilKeliling">%1$.0f cm</string>
-    <string name="hasilLuas">%1$.0f cm<sup><small>2</small></sup></string>
-    <string name="panjang_invalid">Panjang tidak boleh kosong!</string>
-    <string name="lebar_invalid">Lebar tidak boleh kosong!</string>
+    <string name="hasilLuas">%1$.0f</string>
+    <string name="panjang_invalid">Panjang diperlukan!</string>
+    <string name="lebar_invalid">Lebar diperlukan!</string>
 </resources>
