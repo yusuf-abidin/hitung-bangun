@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">Hitung Bangun</string>
-    <string name="persegipanjang">Persegi panjang adalah bentuk dua dimensi yang terdiri dari dua pasang sisi yang masing-masing memiliki panjang yang sama dan sejajar dengan pasangannya, serta memiliki empat sudut yang kesemuanya merupakan sudut siku-siku.</string>
-    <string name="panjangPP">Panjang (cm)</string>
-    <string name="lebarPP">Lebar (cm)</string>\
+    <string name="panjangPP">Panjang (AB)</string>
+    <string name="cm">cm</string>
+    <string name="lebarPP">Lebar (BC)</string>\
     <string name="btnHitung">Hitung</string>
     <string name="btnReset">Reset</string>
-    <string name="judulPP">Hitung Persegi Panjang</string>
+    <string name="judulPP">Persegi Panjang</string>
     <string name="keliling">Keliling :</string>
     <string name="luas">Luas :</string>
     <string name="cmkuadrat">50 cm<sup><small>2</small></sup></string>
     <string name="hasilKeliling">%1$.0f cm</string>
     <string name="hasilLuas">%1$.0f cm<sup><small>2</small></sup></string>
+    <string name="panjang_invalid">Panjang tidak boleh kosong!</string>
+    <string name="lebar_invalid">Lebar tidak boleh kosong!</string>
 </resources>
