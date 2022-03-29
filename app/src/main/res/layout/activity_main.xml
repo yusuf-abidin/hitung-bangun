@@ -7,12 +7,93 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/judulPP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/judulPP"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/descPersegiPanjang"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/persegipanjang"
+        android:justificationMode="inter_word"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/judulPP"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/panjangPP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/panjangPP"
+        app:layout_constraintBottom_toBottomOf="@id/editTextpanjang"
+        app:layout_constraintTop_toTopOf="@id/editTextpanjang"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextpanjang"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="number"
+        android:ems="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/panjangPP"
+        app:layout_constraintTop_toBottomOf="@id/descPersegiPanjang" />
+
+    <TextView
+        android:id="@+id/lebarPP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lebarPP"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextlebar"
+        app:layout_constraintBottom_toBottomOf="@id/editTextlebar"/>
+
+    <EditText
+        android:id="@+id/editTextlebar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/editTextpanjang"
+        app:layout_constraintTop_toBottomOf="@id/editTextpanjang" />
+
+    <Button
+        android:id="@+id/btnHitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/btnHitung"
+        app:layout_constraintStart_toStartOf="@id/editTextlebar"
+        app:layout_constraintTop_toBottomOf="@id/editTextlebar" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btnHitung"
+        app:layout_constraintTop_toBottomOf="@id/editTextlebar"
+        android:layout_marginStart="16dp"
+        android:text="@string/btnReset"
+        app:layout_constraintTop_toTopOf="@id/btnHitung"
+        app:layout_constraintBottom_toBottomOf="@id/btnHitung"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

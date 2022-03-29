@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Hitung Bangun</string>
+    <string name="persegipanjang">Persegi panjang adalah bentuk dua dimensi yang terdiri dari dua pasang sisi yang masing-masing memiliki panjang yang sama dan sejajar dengan pasangannya, serta memiliki empat sudut yang kesemuanya merupakan sudut siku-siku.</string>
+    <string name="panjangPP">Panjang (cm)</string>
+    <string name="lebarPP">Lebar (cm)</string>\
+    <string name="btnHitung">Hitung</string>
+    <string name="btnReset">Reset</string>
+    <string name="judulPP">Hitung Persegi Panjang</string>
 </resources>
