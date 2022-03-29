@@ -86,14 +86,15 @@
         app:layout_constraintTop_toBottomOf="@id/editTextlebar" />
 
     <Button
+        android:id="@+id/btnReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/btnHitung"
-        app:layout_constraintTop_toBottomOf="@id/editTextlebar"
         android:layout_marginStart="16dp"
         android:text="@string/btnReset"
-        app:layout_constraintTop_toTopOf="@id/btnHitung"
-        app:layout_constraintBottom_toBottomOf="@id/btnHitung"/>
+        app:layout_constraintBottom_toBottomOf="@id/btnHitung"
+        app:layout_constraintStart_toEndOf="@id/btnHitung"
+        app:layout_constraintTop_toBottomOf="@id/editTextlebar"
+        app:layout_constraintTop_toTopOf="@id/btnHitung" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
