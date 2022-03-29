@@ -6,4 +6,9 @@
     <string name="btnHitung">Hitung</string>
     <string name="btnReset">Reset</string>
     <string name="judulPP">Hitung Persegi Panjang</string>
+    <string name="keliling">Keliling :</string>
+    <string name="luas">Luas :</string>
+    <string name="cmkuadrat">50 cm<sup><small>2</small></sup></string>
+    <string name="hasilKeliling">%1$.0f cm</string>
+    <string name="hasilLuas">%1$.0f cm<sup><small>2</small></sup></string>
 </resources>
