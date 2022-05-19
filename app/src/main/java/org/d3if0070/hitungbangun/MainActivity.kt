@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import org.d3if0070.hitungbangun.databinding.ActivityMainBinding
+import org.d3if0070.hitungbangun.model.HasilHitung
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,12 +35,24 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val keliling = 2 * (panjang.toFloat() + lebar.toFloat())
-        val luas = panjang.toFloat() * lebar.toFloat()
+        val result = hitungPP(
+            panjang.toFloat(), lebar.toFloat()
+        )
 
-        binding.hasilKeliling.text = getString(R.string.hasilKeliling, keliling)
-        binding.hasilLuas.text = getString(R.string.hasilLuas, luas)
+       showResult(result)
 
+    }
+
+    private fun hitungPP(panjang : Float, lebar : Float) : HasilHitung{
+        val keliling = 2 * (panjang + lebar)
+        val luas = panjang * lebar
+
+        return HasilHitung(keliling, luas)
+    }
+
+    private fun showResult(result: HasilHitung){
+        binding.hasilKeliling.text = getString(R.string.hasilKeliling, result.keliling)
+        binding.hasilLuas.text = getString(R.string.hasilLuas, result.luas)
     }
 
     private fun reset(){
@@ -49,6 +62,5 @@ class MainActivity : AppCompatActivity() {
         binding.hasilKeliling.setText("30 cm")
 
     }
-
 
 }
