@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnHitung.setOnClickListener{ hitungPP()}
         binding.btnReset.setOnClickListener { reset() }
+        viewModel.getHasilHitung().observe(this, {showResult(it)})
     }
 
 
@@ -40,16 +41,17 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val result = viewModel.hitungPP(
+        viewModel.hitungPP(
             panjang.toFloat(), lebar.toFloat()
         )
-
-       showResult(result)
 
     }
 
 
-    private fun showResult(result: HasilHitung){
+    private fun showResult(result: HasilHitung?){
+
+        if (result == null) return
+
         binding.hasilKeliling.text = getString(R.string.hasilKeliling, result.keliling)
         binding.hasilLuas.text = getString(R.string.hasilLuas, result.luas)
     }
