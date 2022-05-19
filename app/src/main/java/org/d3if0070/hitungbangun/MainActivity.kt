@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import org.d3if0070.hitungbangun.databinding.ActivityMainBinding
 import org.d3if0070.hitungbangun.model.HasilHitung
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val viewModel:MainViewModel by lazy {
+        ViewModelProvider(this)[MainViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val result = hitungPP(
+        val result = viewModel.hitungPP(
             panjang.toFloat(), lebar.toFloat()
         )
 
@@ -43,12 +48,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun hitungPP(panjang : Float, lebar : Float) : HasilHitung{
-        val keliling = 2 * (panjang + lebar)
-        val luas = panjang * lebar
-
-        return HasilHitung(keliling, luas)
-    }
 
     private fun showResult(result: HasilHitung){
         binding.hasilKeliling.text = getString(R.string.hasilKeliling, result.keliling)
