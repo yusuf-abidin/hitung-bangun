@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="@drawable/persegipanjang"/>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:id="@+id/judulKeliling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            android:text="@string/keliling_pp"
+            />
+        <TextView
+            android:id="@+id/rumusKeliling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/judulKeliling"
+            android:text="@string/rumus_keliling_pp"
+            />
+
+        <TextView
+            android:id="@+id/judulLuas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/rumusKeliling"
+            android:text="@string/luas_pp"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/rumusLuas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/judulLuas"
+            android:text="@string/rumus_luas_pp"
+            android:layout_marginBottom="32dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

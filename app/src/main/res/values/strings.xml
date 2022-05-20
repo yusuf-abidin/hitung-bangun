@@ -14,4 +14,9 @@
     <string name="hasilLuas">%1$.0f</string>
     <string name="panjang_invalid">Panjang diperlukan!</string>
     <string name="lebar_invalid">Lebar diperlukan!</string>
+    <string name="rumus_pp">Rumus Persegi Panjang</string>
+    <string name="keliling_pp">Rumus Keliling</string>
+    <string name="luas_pp">Rumus Luas</string>
+    <string name="rumus_keliling_pp">Keliling = 2 x (Panjang + Lebar)</string>
+    <string name="rumus_luas_pp">Luas = Panjang x Lebar</string>
 </resources>
