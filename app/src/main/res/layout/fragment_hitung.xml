@@ -181,15 +181,13 @@
             android:layout_marginTop="4dp"
             android:textSize="32sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/halo"
+            app:layout_constraintEnd_toStartOf="@id/cmKuadrat"
             app:layout_constraintTop_toBottomOf="@id/luas"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="32dp"
             app:layout_constraintStart_toStartOf="@id/luas"
             android:text="@string/limapuluh"/>
 
         <TextView
-            android:id="@+id/halo"
+            android:id="@+id/cmKuadrat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/hasilLuas"
@@ -199,6 +197,24 @@
             android:textSize="32sp"
             android:textStyle="bold"
             android:text="@string/cmkuadrat"/>
+
+        <Button
+            android:id="@+id/buttonRumus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@id/hasilLuas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="invisible"
+            tools:visibility="visible"
+
+            />
 
 
 

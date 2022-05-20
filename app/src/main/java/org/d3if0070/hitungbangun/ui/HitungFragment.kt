@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import org.d3if0070.hitungbangun.R
 import org.d3if0070.hitungbangun.databinding.FragmentHitungBinding
 import org.d3if0070.hitungbangun.model.HasilHitung
@@ -32,6 +33,13 @@ class HitungFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnHitung.setOnClickListener{ hitungPP()}
         binding.btnReset.setOnClickListener { reset() }
+
+        binding.buttonRumus.setOnClickListener {
+            it.findNavController().navigate(
+                R.id.action_hitungFragment_to_rumusFragment
+            )
+        }
+
         viewModel.getHasilHitung().observe(requireActivity(), {showResult(it)})
     }
 
@@ -61,6 +69,8 @@ class HitungFragment : Fragment() {
 
         binding.hasilKeliling.text = getString(R.string.hasilKeliling, result.keliling)
         binding.hasilLuas.text = getString(R.string.hasilLuas, result.luas)
+
+        binding.buttonRumus.visibility = View.VISIBLE
     }
 
     private fun reset(){
