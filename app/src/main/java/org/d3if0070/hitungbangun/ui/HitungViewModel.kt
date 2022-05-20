@@ -1,4 +1,4 @@
-package org.d3if0070.hitungbangun
+package org.d3if0070.hitungbangun.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
