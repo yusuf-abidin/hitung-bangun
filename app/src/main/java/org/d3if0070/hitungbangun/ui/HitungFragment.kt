@@ -1,5 +1,6 @@
 package org.d3if0070.hitungbangun.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
@@ -51,6 +52,7 @@ class HitungFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnHitung.setOnClickListener{ hitungPP()}
         binding.btnReset.setOnClickListener { reset() }
+        binding.shareButton.setOnClickListener { shareData() }
 
         binding.buttonRumus.setOnClickListener {
             it.findNavController().navigate(
@@ -59,6 +61,21 @@ class HitungFragment : Fragment() {
         }
 
         viewModel.getHasilHitung().observe(requireActivity(), {showResult(it)})
+    }
+
+    private fun shareData(){
+        val message = getString(R.string.template_bagikan,
+        binding.editTextpanjang.text,
+        binding.editTextlebar.text,
+        binding.hasilKeliling.text,
+        binding.hasilLuas.text)
+
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)
+        if (shareIntent.resolveActivity(
+                requireActivity().packageManager) != null){
+            startActivity(shareIntent)
+        }
     }
 
 
@@ -88,7 +105,7 @@ class HitungFragment : Fragment() {
         binding.hasilKeliling.text = getString(R.string.hasilKeliling, result.keliling)
         binding.hasilLuas.text = getString(R.string.hasilLuas, result.luas)
 
-        binding.buttonRumus.visibility = View.VISIBLE
+        binding.butttonGroup.visibility = View.VISIBLE
     }
 
     private fun reset(){

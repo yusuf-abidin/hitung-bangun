@@ -22,4 +22,6 @@
     <string name="rumus_luas_pp">Luas = Panjang x Lebar</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="copyright">Hitung Bangun merupakan sebuah aplikasi Android untuk menghitung Luas dan Keliling Persegi Panjang sebagai sarana belajar untuk anak-anak.\n\nAplikasi ini dibuat untuk memenuhi assessment mata kuliah Pemrograman Untuk Perangkat Bergerak 1. \n\nCopyright © 2022 Yusuf Abidin Nurrahman.\nAll rights reserved.</string>
+    <string name="bagikan">Bagikan</string>
+    <string name="template_bagikan">Panjang: %1$s cm\nLebar: %2$s cm\n\nKeliling: %3$s\nLuas: %4$s cm<sup><small>2</small></sup></string>
 </resources>
