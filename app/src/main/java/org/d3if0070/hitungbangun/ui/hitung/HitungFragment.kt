@@ -3,7 +3,6 @@ package org.d3if0070.hitungbangun.ui.hitung
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -35,14 +34,14 @@ class HitungFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.menu_histori -> {
-                findNavController().navigate(R.id.action_hitungFragment_to_historiFragment)
+                findNavController().navigate(
+                    R.id.action_hitungFragment_to_historiFragment)
                 return true
             }
 
             R.id.menu_about ->{
                 findNavController().navigate(
-                    R.id.action_hitungFragment_to_aboutFragment
-                )
+                    R.id.action_hitungFragment_to_aboutFragment)
                 return true
             }
         }
@@ -71,10 +70,7 @@ class HitungFragment : Fragment() {
                 R.id.action_hitungFragment_to_rumusFragment
             )
         }
-        viewModel.data.observe(viewLifecycleOwner, {
-            if (it == null) return@observe
-            Log.d("HitungFragment", "Data tersimpan. ID = ${it.id}")
-        })
+
         viewModel.getHasilHitung().observe(requireActivity(), {showResult(it)})
     }
 

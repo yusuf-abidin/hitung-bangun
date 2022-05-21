@@ -10,25 +10,22 @@ import kotlinx.coroutines.withContext
 import org.d3if0070.hitungbangun.db.HitungDao
 import org.d3if0070.hitungbangun.db.HitungEntity
 import org.d3if0070.hitungbangun.model.HasilHitung
+import org.d3if0070.hitungbangun.model.hitungBangun
 
 class HitungViewModel(private val db: HitungDao): ViewModel() {
 
     private val hasilHitung = MutableLiveData<HasilHitung?>()
-    val data = db.getLastPerhitungan()
 
     fun hitungPP(panjang : Float, lebar : Float){
-        val keliling = 2 * (panjang + lebar)
-        val luas = panjang * lebar
-
-        hasilHitung.value = HasilHitung(keliling, luas)
+       val dataHitung = HitungEntity(
+           panjang= panjang,
+           lebar = lebar
+       )
+        hasilHitung.value = dataHitung.hitungBangun()
 
         viewModelScope.launch {
             withContext(Dispatchers.IO){
-                val dataPerhitungan = HitungEntity(
-                    panjang = panjang,
-                    lebar = lebar
-                )
-                db.insert(dataPerhitungan)
+                db.insert(dataHitung)
             }
         }
 

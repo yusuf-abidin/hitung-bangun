@@ -10,6 +10,7 @@ interface HitungDao {
     @Insert
     fun insert(hitung: HitungEntity)
 
-    @Query("SELECT * FROM perhitungan ORDER BY id DESC LIMIT 1")
-    fun getLastPerhitungan(): LiveData<HitungEntity>
+    @Query("SELECT * FROM hitung ORDER BY id DESC")
+    fun getLastPerhitungan(): LiveData<List<HitungEntity>>
+
 }

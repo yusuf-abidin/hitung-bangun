@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity(tableName = "perhitungan")
+@Entity(tableName = "hitung")
 data class HitungEntity (
     @PrimaryKey(autoGenerate = true)
     var id : Long = 0L,
