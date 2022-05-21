@@ -1,8 +1,9 @@
-package org.d3if0070.hitungbangun.ui
+package org.d3if0070.hitungbangun.ui.hitung
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -11,14 +12,17 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.d3if0070.hitungbangun.R
 import org.d3if0070.hitungbangun.databinding.FragmentHitungBinding
+import org.d3if0070.hitungbangun.db.HitungDb
 import org.d3if0070.hitungbangun.model.HasilHitung
 
 class HitungFragment : Fragment() {
 
     private lateinit var binding: FragmentHitungBinding
 
-    private val viewModel: MainViewModel by lazy {
-        ViewModelProvider(requireActivity())[MainViewModel::class.java]
+    private val viewModel: HitungViewModel by lazy {
+        val db = HitungDb.getInstance(requireContext())
+        val factory = HitungViewModelFactory(db.dao)
+        ViewModelProvider(this, factory)[HitungViewModel::class.java]
 
     }
 
@@ -40,7 +44,7 @@ class HitungFragment : Fragment() {
 
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState:Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         binding = FragmentHitungBinding.inflate(layoutInflater, container, false)
         setHasOptionsMenu(true)
@@ -59,7 +63,10 @@ class HitungFragment : Fragment() {
                 R.id.action_hitungFragment_to_rumusFragment
             )
         }
-
+        viewModel.data.observe(viewLifecycleOwner, {
+            if (it == null) return@observe
+            Log.d("HitungFragment", "Data tersimpan. ID = ${it.id}")
+        })
         viewModel.getHasilHitung().observe(requireActivity(), {showResult(it)})
     }
 
