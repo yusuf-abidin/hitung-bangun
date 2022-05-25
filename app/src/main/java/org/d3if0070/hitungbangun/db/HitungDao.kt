@@ -13,4 +13,8 @@ interface HitungDao {
     @Query("SELECT * FROM hitung ORDER BY id DESC")
     fun getLastPerhitungan(): LiveData<List<HitungEntity>>
 
+    @Query("DELETE FROM hitung")
+    fun clearData()
+
+
 }

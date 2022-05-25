@@ -28,4 +28,8 @@
 <string name="histori">Histori</string>
     <string name="hasil_x">Panjang: %1$.0f cm - Lebar: %2$.0f cm</string>
     <string name="data_x">Keliling: %1$.0f cm - Luas: %2$.0f cm<sup><small>2</small></sup></string>
+    <string name="hapus_histori">Hapus Histori</string>
+    <string name="konfirmasi_hapus">Hapus Semua Histori?</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
 </resources>

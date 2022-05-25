@@ -54,4 +54,5 @@
         app:layout_constraintTop_toBottomOf="@id/hitungTextView"
         tools:text="Keliling: 80 cm - Luas: 384cm2"/>
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>
