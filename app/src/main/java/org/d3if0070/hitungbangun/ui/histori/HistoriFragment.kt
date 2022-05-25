@@ -5,12 +5,17 @@ import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.launch
 import org.d3if0070.hitungbangun.R
+import org.d3if0070.hitungbangun.data.SettingDataStore
+import org.d3if0070.hitungbangun.data.dataStore
 import org.d3if0070.hitungbangun.databinding.FragmentHistoryBinding
 import org.d3if0070.hitungbangun.db.HitungDb
 
@@ -25,9 +30,19 @@ class HistoriFragment: Fragment() {
     private lateinit var binding: FragmentHistoryBinding
     private lateinit var myAdapter: HistoriAdapter
     private var isLinearLayoutManager = true
+    private lateinit var layoutDataStore: SettingDataStore
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        layoutDataStore = SettingDataStore(requireContext().dataStore)
+        layoutDataStore.preferenceFlow.asLiveData()
+            .observe(viewLifecycleOwner, { value ->
+                isLinearLayoutManager = value
+                chooseLayout()
+                activity?.invalidateOptionsMenu()
+            })
+
         myAdapter = HistoriAdapter()
         with(binding.recyclerView) {
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
@@ -69,6 +84,13 @@ class HistoriFragment: Fragment() {
 
             R.id.action_switch_layout -> {
                 isLinearLayoutManager = !isLinearLayoutManager
+
+                lifecycleScope.launch() {
+                    layoutDataStore.saveLayoutToPreferencesStore(
+                        isLinearLayoutManager, requireContext()
+                    )
+                }
+
                 chooseLayout()
                 setIcon(item)
                 true
