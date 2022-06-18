@@ -27,4 +27,8 @@ object BangunDatarApi{
     val service: BangunDatarApiService by lazy {
         retrofit.create(BangunDatarApiService::class.java)
     }
+
+    fun getBangunDatarUrl(nama : String): String {
+        return "$BASE_URL$nama.jpg"
+    }
 }

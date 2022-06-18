@@ -3,9 +3,11 @@ package org.d3if0070.hitungbangun.ui.bangundatar
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import org.d3if0070.hitungbangun.BangunDatar
 import org.d3if0070.hitungbangun.R
 import org.d3if0070.hitungbangun.databinding.ListBangunDatarBinding
+import org.d3if0070.hitungbangun.network.BangunDatarApi
 
 class BangunDatarAdapter : RecyclerView.Adapter<BangunDatarAdapter.ViewHolder>() {
 
@@ -24,7 +26,10 @@ class BangunDatarAdapter : RecyclerView.Adapter<BangunDatarAdapter.ViewHolder>()
             jumlahSudutTextView.text = bangunDatar.jumlahSudut
             rumusLuasTextView.text = bangunDatar.rumusLuas
             rumusKelilingTextView.text = bangunDatar.rumusKeliling
-            imageView.setImageResource(R.drawable.persegipanjang)
+            Glide.with(imageView.context)
+                .load(BangunDatarApi.getBangunDatarUrl(bangunDatar.imageId))
+                .error(R.drawable.ic_baseline_broken_image_24)
+                .into(imageView)
         }
     }
 
