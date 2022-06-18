@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_hitungFragment_to_historiFragment"
             app:destination="@id/historiFragment" />
+        <action
+            android:id="@+id/action_hitungFragment_to_bangunDatarFragment"
+            app:destination="@id/bangunDatarFragment" />
     </fragment>
 
     <fragment
@@ -37,4 +40,9 @@
         android:name="org.d3if0070.hitungbangun.ui.histori.HistoriFragment"
         android:label="@string/histori"
         tools:layout="@layout/fragment_history"/>
+    <fragment
+        android:id="@+id/bangunDatarFragment"
+        android:name="org.d3if0070.hitungbangun.ui.bangundatar.BangunDatarFragment"
+        android:label="Bangun Datar"
+        tools:layout="@layout/fragment_bangun_datar"/>
 </navigation>

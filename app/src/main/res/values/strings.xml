@@ -33,4 +33,11 @@
     <string name="hapus">Hapus</string>
     <string name="batal">Batal</string>
     <string name="action_switch_layout">Ubah layout</string>
+    <string name="bangun_datar">Bangun Datar</string>
+
+    <string name="jumlahSudut">Jumlah Sudut : </string>
+    <string name="rumusLuas">Rumus Luas : </string>
+    <string name="rumusKeliling">Rumus Keliling :</string>
+    <string name="rumus_luas">Rumus Luas :</string>
+    <string name="jumlah_sudut">Jumlah Sudut :</string>
 </resources>

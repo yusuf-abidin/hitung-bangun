@@ -44,6 +44,13 @@ class HitungFragment : Fragment() {
                     R.id.action_hitungFragment_to_aboutFragment)
                 return true
             }
+
+            R.id.menu_bangun_datar ->{
+                findNavController().navigate(
+                    R.id.action_hitungFragment_to_bangunDatarFragment
+                )
+                return true
+            }
         }
 
         return super.onOptionsItemSelected(item)
