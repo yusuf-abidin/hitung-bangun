@@ -5,5 +5,5 @@ data class BangunDatar (
     val jumlahSudut : String,
     val rumusLuas : String,
     val rumusKeliling : String,
-    val imageId : Int
+    val imageId : String
 )

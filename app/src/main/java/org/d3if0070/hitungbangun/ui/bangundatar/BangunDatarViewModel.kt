@@ -16,33 +16,18 @@ class BangunDatarViewModel : ViewModel() {
     private val data = MutableLiveData<List<BangunDatar>>()
 
     init {
-    data.value =initData()
         retreiveData()
-
     }
 
     private fun retreiveData(){
         viewModelScope.launch ( Dispatchers.IO){
             try {
-                val result = BangunDatarApi.service.getBangunDatar()
-                Log.d("BangunDatarView", "Success: $result" )
+                data.postValue(BangunDatarApi.service.getBangunDatar())
             }catch (e: Exception){
                 Log.d("BangunDatarView", "Failure: ${e.message}")
         } }
     }
 
-    private fun initData(): List<BangunDatar>{
-        return listOf(
-            BangunDatar("Persegi", "4", "pxl", "pxl",  R.drawable.persegipanjang),
-            BangunDatar("Persegi Panjang", "4","pxl","pxl",    R.drawable.persegipanjang),
-            BangunDatar("Jajar Genjang", "4","pxl","pxl",    R.drawable.persegipanjang),
-            BangunDatar("Layang-Layang", "4","pxl","pxl",    R.drawable.persegipanjang),
-            BangunDatar("Trapesium", "4","pxl","pxl",    R.drawable.persegipanjang),
-            BangunDatar("Segitiga", "4","pxl","pxl",    R.drawable.persegipanjang),
-            BangunDatar("Belah Ketupat", "4","pxl","pxl",    R.drawable.persegipanjang),
-            BangunDatar("Lingkaran", "4","pxl","pxl",    R.drawable.persegipanjang)
-        )
-    }
 
     fun getData(): LiveData<List<BangunDatar>> = data
 }
