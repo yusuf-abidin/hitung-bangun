@@ -9,11 +9,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.d3if0070.hitungbangun.BangunDatar
 import org.d3if0070.hitungbangun.R
+import org.d3if0070.hitungbangun.network.ApiStatus
 import org.d3if0070.hitungbangun.network.BangunDatarApi
 import java.lang.Exception
 
 class BangunDatarViewModel : ViewModel() {
     private val data = MutableLiveData<List<BangunDatar>>()
+    private val status = MutableLiveData<ApiStatus>()
 
     init {
         retreiveData()
@@ -21,13 +23,18 @@ class BangunDatarViewModel : ViewModel() {
 
     private fun retreiveData(){
         viewModelScope.launch ( Dispatchers.IO){
+            status.postValue(ApiStatus.LOADING)
             try {
                 data.postValue(BangunDatarApi.service.getBangunDatar())
+                status.postValue(ApiStatus.SUCCESS)
             }catch (e: Exception){
                 Log.d("BangunDatarView", "Failure: ${e.message}")
+                status.postValue(ApiStatus.FAILED)
         } }
     }
 
 
     fun getData(): LiveData<List<BangunDatar>> = data
+
+    fun getStatus() : LiveData<ApiStatus> = status
 }

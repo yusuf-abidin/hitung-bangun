@@ -15,6 +15,7 @@ import org.d3if0070.hitungbangun.databinding.FragmentAboutBinding.inflate
 import org.d3if0070.hitungbangun.databinding.FragmentBangunDatarBinding
 import org.d3if0070.hitungbangun.databinding.FragmentHistoryBinding.inflate
 import org.d3if0070.hitungbangun.databinding.FragmentRumusBinding.inflate
+import org.d3if0070.hitungbangun.network.ApiStatus
 
 class BangunDatarFragment : Fragment() {
     private val viewModel: BangunDatarViewModel by lazy {
@@ -45,6 +46,24 @@ class BangunDatarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getData().observe(viewLifecycleOwner) {
             myAdapter.updateData(it)
+        }
+        viewModel.getStatus().observe(viewLifecycleOwner) {
+            updateProgress(it)
+        }
+    }
+
+    private fun updateProgress(status: ApiStatus){
+        when(status){
+            ApiStatus.LOADING ->{
+                binding.progressBar.visibility = View.VISIBLE
+            }
+            ApiStatus.SUCCESS ->{
+                binding.progressBar.visibility = View.GONE
+            }
+            ApiStatus.FAILED ->{
+                binding.progressBar.visibility = View.GONE
+                binding.networkError.visibility = View.VISIBLE
+            }
         }
     }
 }
