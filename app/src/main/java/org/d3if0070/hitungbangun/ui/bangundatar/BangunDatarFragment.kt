@@ -50,6 +50,8 @@ class BangunDatarFragment : Fragment() {
         viewModel.getStatus().observe(viewLifecycleOwner) {
             updateProgress(it)
         }
+
+        viewModel.scheduleAdapter(requireActivity().application)
     }
 
     private fun updateProgress(status: ApiStatus){
