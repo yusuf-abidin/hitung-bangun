@@ -25,7 +25,7 @@
     <string name="bagikan">Bagikan</string>
     <string name="template_bagikan">Panjang: %1$s cm\nLebar: %2$s cm\n\nKeliling: %3$s\nLuas: %4$s cm<sup><small>2</small></sup></string>
     <string name="belum_ada_data">Belum ada data</string>
-<string name="histori">Histori</string>
+    <string name="histori">Histori</string>
     <string name="hasil_x">Panjang: %1$.0f cm\nLebar: %2$.0f cm</string>
     <string name="data_x">Keliling: %1$.0f cm\nLuas: %2$.0f cm<sup><small>2</small></sup></string>
     <string name="hapus_histori">Hapus Histori</string>
@@ -41,4 +41,7 @@
     <string name="rumus_luas">Rumus Luas :</string>
     <string name="jumlah_sudut">Jumlah Sudut :</string>
     <string name="koneksi_error">Koneksi Error</string>
+    
+    <string name="channel_name">Updater</string>
+    <string name="channel_desc">Update data bangun datar otomatis</string>
 </resources>

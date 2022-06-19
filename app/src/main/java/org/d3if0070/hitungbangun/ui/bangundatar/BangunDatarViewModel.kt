@@ -13,6 +13,7 @@ import androidx.work.WorkManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.d3if0070.hitungbangun.BangunDatar
+import org.d3if0070.hitungbangun.MainActivity
 import org.d3if0070.hitungbangun.R
 import org.d3if0070.hitungbangun.network.ApiStatus
 import org.d3if0070.hitungbangun.network.BangunDatarApi
@@ -51,7 +52,7 @@ class BangunDatarViewModel : ViewModel() {
             .build()
 
         WorkManager.getInstance(app).enqueueUniqueWork(
-            "updater",
+            MainActivity.CHANNEL_ID,
             ExistingWorkPolicy.REPLACE,
             request
         )
