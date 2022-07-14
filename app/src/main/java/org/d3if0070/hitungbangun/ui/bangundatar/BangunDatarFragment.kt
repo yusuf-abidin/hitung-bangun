@@ -35,7 +35,6 @@ class BangunDatarFragment : Fragment() {
         binding =FragmentBangunDatarBinding.inflate(layoutInflater, container, false)
         myAdapter = BangunDatarAdapter()
         with(binding.recyclerView){
-            addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
             adapter = myAdapter
             setHasFixedSize(true)
         }
